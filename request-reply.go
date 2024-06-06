@@ -29,16 +29,16 @@ package nats_connect_shared
 type SendEmailRequest struct {
 	BodyPlain          string           `json:"body_plain,omitempty"`
 	BodyHTML           string           `json:"body_html,omitempty"`
-	EmailToRecipient   []emailRecipient `json:"email_to_recipient"`
+	EmailToRecipient   []EmailRecipient `json:"email_to_recipient"`
 	SaaSKey            string           `json:"saas_key"`
 	SenderEmailAddress string           `json:"sender_email_address,omitempty"`
 	SenderName         string           `json:"sender_name,omitempty"`
 	Subject            string           `json:"subject,omitempty"`
 }
 
-type emailRecipient struct {
-	name    string
-	address string
+type EmailRecipient struct {
+	Name    string
+	Address string
 }
 
 // Stripe
