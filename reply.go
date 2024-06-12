@@ -47,6 +47,68 @@ type GetTeamLimitsReply struct {
 	} `json:"response"`
 }
 
+type GetVersionReply struct {
+	Error struct {
+		ErrorAdditionalInfo string `json:"error_additional_info"`
+		ErrorFilename       string `json:"error_filename"`
+		ErrorFunctionName   string `json:"error_function_name"`
+		ErrorLineNumber     int    `json:"error_line_number"`
+		ErrorMessage        string `json:"error_message"`
+	} `json:"error"`
+	Response struct {
+		Commit  string    `json:"commit"`
+		Date    time.Time `json:"date"`
+		Version string    `json:"version"`
+	} `json:"response"`
+}
+
+type ListInformationAppUsersTeamReply struct {
+	Error struct {
+		ErrorAdditionalInfo string `json:"error_additional_info"`
+		ErrorFilename       string `json:"error_filename"`
+		ErrorFunctionName   string `json:"error_function_name"`
+		ErrorLineNumber     int    `json:"error_line_number"`
+		ErrorMessage        string `json:"error_message"`
+	} `json:"error"`
+	Response struct {
+		Items []struct {
+			AppUser struct {
+				Id         string `json:"id"`
+				Identifier string `json:"identifier"`
+				Name       string `json:"name"`
+			} `json:"app_user"`
+			Created           time.Time `json:"created"`
+			Id                string    `json:"id"`
+			PendingInvitation bool      `json:"pending_invitation"`
+			RoleId            string    `json:"role_id"`
+			RoleName          string    `json:"role_name"`
+			Team              struct {
+				Id   string `json:"id"`
+				Name string `json:"name"`
+			} `json:"team"`
+		} `json:"items"`
+	} `json:"response"`
+}
+
+type ListPersonalAccessToken struct {
+	Error struct {
+		ErrorAdditionalInfo string `json:"error_additional_info"`
+		ErrorFilename       string `json:"error_filename"`
+		ErrorFunctionName   string `json:"error_function_name"`
+		ErrorLineNumber     int    `json:"error_line_number"`
+		ErrorMessage        string `json:"error_message"`
+	} `json:"error"`
+	Response struct {
+		Items []struct {
+			Created    time.Time `json:"created"`
+			Id         string    `json:"id"`
+			Name       string    `json:"name"`
+			Expires    time.Time `json:"expires,omitempty"`
+			LastActive time.Time `json:"last_active,omitempty"`
+		} `json:"items"`
+	} `json:"response"`
+}
+
 type ListTeamsReply struct {
 	Error struct {
 		ErrorAdditionalInfo string `json:"error_additional_info"`
