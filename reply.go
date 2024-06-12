@@ -33,6 +33,119 @@ type GetSystemReply struct {
 	} `json:"response"`
 }
 
+type GetSystemLimitsReply struct {
+	Error struct {
+		ErrorAdditionalInfo string `json:"error_additional_info"`
+		ErrorFilename       string `json:"error_filename"`
+		ErrorFunctionName   string `json:"error_function_name"`
+		ErrorLineNumber     int    `json:"error_line_number"`
+		ErrorMessage        string `json:"error_message"`
+	} `json:"error"`
+	Response struct {
+		Allocated struct {
+			NumAccounts    int `json:"num_accounts"`
+			ResourceLimits struct {
+				Conn               int  `json:"conn"`
+				Consumer           int  `json:"consumer"`
+				Data               int  `json:"data"`
+				DisallowBearer     bool `json:"disallow_bearer"`
+				DiskMaxStreamBytes int  `json:"disk_max_stream_bytes"`
+				DiskStorage        int  `json:"disk_storage"`
+				Exports            int  `json:"exports"`
+				Imports            int  `json:"imports"`
+				Leaf               int  `json:"leaf"`
+				MaxAckPending      int  `json:"max_ack_pending"`
+				MaxBytesRequired   bool `json:"max_bytes_required"`
+				MemMaxStreamBytes  int  `json:"mem_max_stream_bytes"`
+				MemStorage         int  `json:"mem_storage"`
+				Payload            int  `json:"payload"`
+				Streams            int  `json:"streams"`
+				Subs               int  `json:"subs"`
+				TieredLimits       struct {
+					R1 struct {
+						Consumer           int   `json:"consumer"`
+						DiskMaxStreamBytes int64 `json:"disk_max_stream_bytes"`
+						DiskStorage        int64 `json:"disk_storage"`
+						MaxAckPending      int   `json:"max_ack_pending"`
+						MaxBytesRequired   bool  `json:"max_bytes_required"`
+						MemMaxStreamBytes  int   `json:"mem_max_stream_bytes"`
+						MemStorage         int   `json:"mem_storage"`
+						Streams            int   `json:"streams"`
+					} `json:"R1"`
+				} `json:"tiered_limits"`
+				Wildcards bool `json:"wildcards"`
+			} `json:"resource_limits"`
+		} `json:"allocated"`
+		Available struct {
+			NumAccounts    int `json:"num_accounts"`
+			ResourceLimits struct {
+				Conn               int  `json:"conn"`
+				Consumer           int  `json:"consumer"`
+				Data               int  `json:"data"`
+				DisallowBearer     bool `json:"disallow_bearer"`
+				DiskMaxStreamBytes int  `json:"disk_max_stream_bytes"`
+				DiskStorage        int  `json:"disk_storage"`
+				Exports            int  `json:"exports"`
+				Imports            int  `json:"imports"`
+				Leaf               int  `json:"leaf"`
+				MaxAckPending      int  `json:"max_ack_pending"`
+				MaxBytesRequired   bool `json:"max_bytes_required"`
+				MemMaxStreamBytes  int  `json:"mem_max_stream_bytes"`
+				MemStorage         int  `json:"mem_storage"`
+				Payload            int  `json:"payload"`
+				Streams            int  `json:"streams"`
+				Subs               int  `json:"subs"`
+				TieredLimits       struct {
+					R1 struct {
+						Consumer           int   `json:"consumer"`
+						DiskMaxStreamBytes int64 `json:"disk_max_stream_bytes"`
+						DiskStorage        int   `json:"disk_storage"`
+						MaxAckPending      int   `json:"max_ack_pending"`
+						MaxBytesRequired   bool  `json:"max_bytes_required"`
+						MemMaxStreamBytes  int   `json:"mem_max_stream_bytes"`
+						MemStorage         int   `json:"mem_storage"`
+						Streams            int   `json:"streams"`
+					} `json:"R1"`
+				} `json:"tiered_limits"`
+				Wildcards bool `json:"wildcards"`
+			} `json:"resource_limits"`
+		} `json:"available"`
+		Total struct {
+			NumAccounts    int `json:"num_accounts"`
+			ResourceLimits struct {
+				Conn               int  `json:"conn"`
+				Consumer           int  `json:"consumer"`
+				Data               int  `json:"data"`
+				DisallowBearer     bool `json:"disallow_bearer"`
+				DiskMaxStreamBytes int  `json:"disk_max_stream_bytes"`
+				DiskStorage        int  `json:"disk_storage"`
+				Exports            int  `json:"exports"`
+				Imports            int  `json:"imports"`
+				Leaf               int  `json:"leaf"`
+				MaxAckPending      int  `json:"max_ack_pending"`
+				MaxBytesRequired   bool `json:"max_bytes_required"`
+				MemMaxStreamBytes  int  `json:"mem_max_stream_bytes"`
+				MemStorage         int  `json:"mem_storage"`
+				Payload            int  `json:"payload"`
+				Streams            int  `json:"streams"`
+				Subs               int  `json:"subs"`
+				TieredLimits       struct {
+					R1 struct {
+						Consumer           int   `json:"consumer"`
+						DiskMaxStreamBytes int64 `json:"disk_max_stream_bytes"`
+						DiskStorage        int64 `json:"disk_storage"`
+						MaxAckPending      int   `json:"max_ack_pending"`
+						MaxBytesRequired   bool  `json:"max_bytes_required"`
+						MemMaxStreamBytes  int   `json:"mem_max_stream_bytes"`
+						MemStorage         int   `json:"mem_storage"`
+						Streams            int   `json:"streams"`
+					} `json:"R1"`
+				} `json:"tiered_limits"`
+				Wildcards bool `json:"wildcards"`
+			} `json:"resource_limits"`
+		} `json:"total"`
+	} `json:"response"`
+}
 type GetTeamReply struct {
 	Error struct {
 		ErrorAdditionalInfo string `json:"error_additional_info"`
