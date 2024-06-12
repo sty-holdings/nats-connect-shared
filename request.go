@@ -24,7 +24,9 @@ OTHER DEALINGS IN THE SOFTWARE.
 */
 package nats_connect_shared
 
+//==============================
 // SendGrid - Twilio
+//==============================
 
 type SendEmailRequest struct {
 	BodyPlain          string           `json:"body_plain,omitempty"`
@@ -41,7 +43,9 @@ type EmailRecipient struct {
 	Address string
 }
 
+//==============================
 // Stripe
+//==============================
 
 type ListPaymentMethodRequest struct {
 	SaaSKey string `json:"saas_key"`
@@ -81,7 +85,9 @@ type ConfirmPaymentIntentRequest struct {
 	SaaSKey         string `json:"saas_key"`
 }
 
+//==============================
 // Synadia Cloud
+//==============================
 
 type GetPersonalAccessTokenRequest struct {
 	SaaSKey string `json:"saas_key"`
