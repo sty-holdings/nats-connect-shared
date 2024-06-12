@@ -23,6 +23,30 @@ type GetTeamReply struct {
 	} `json:"response"`
 }
 
+type GetTeamLimitsReply struct {
+	Error struct {
+		ErrorAdditionalInfo string `json:"error_additional_info"`
+		ErrorFilename       string `json:"error_filename"`
+		ErrorFunctionName   string `json:"error_function_name"`
+		ErrorLineNumber     int    `json:"error_line_number"`
+		ErrorMessage        string `json:"error_message"`
+	} `json:"error"`
+	Response struct {
+		Allocated struct {
+			DisablePrometheusFederation bool `json:"disable_prometheus_federation"`
+			NumUsers                    int  `json:"num_users"`
+		} `json:"allocated"`
+		Available struct {
+			DisablePrometheusFederation bool `json:"disable_prometheus_federation"`
+			NumUsers                    int  `json:"num_users"`
+		} `json:"available"`
+		Total struct {
+			DisablePrometheusFederation bool `json:"disable_prometheus_federation"`
+			NumUsers                    int  `json:"num_users"`
+		} `json:"total"`
+	} `json:"response"`
+}
+
 type ListTeamsReply struct {
 	Error struct {
 		ErrorAdditionalInfo string `json:"error_additional_info"`
