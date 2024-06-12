@@ -388,6 +388,30 @@ type ListSystemAccountInfoReply struct {
 	} `json:"response"`
 }
 
+type ListSystemServerInfoReply struct {
+	Error struct {
+		ErrorAdditionalInfo string `json:"error_additional_info"`
+		ErrorFilename       string `json:"error_filename"`
+		ErrorFunctionName   string `json:"error_function_name"`
+		ErrorLineNumber     int    `json:"error_line_number"`
+		ErrorMessage        string `json:"error_message"`
+	} `json:"error"`
+	Response struct {
+		Items []struct {
+			Cluster   string    `json:"cluster"`
+			Domain    string    `json:"domain"`
+			Host      string    `json:"host"`
+			Id        string    `json:"id"`
+			Jetstream bool      `json:"jetstream"`
+			Name      string    `json:"name"`
+			Seq       int       `json:"seq"`
+			Tags      []string  `json:"tags"`
+			Time      time.Time `json:"time"`
+			Ver       string    `json:"ver"`
+		} `json:"items"`
+	} `json:"response"`
+}
+
 type ListSystemsReply struct {
 	Error struct {
 		ErrorAdditionalInfo string `json:"error_additional_info"`
