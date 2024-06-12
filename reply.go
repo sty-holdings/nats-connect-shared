@@ -129,3 +129,13 @@ type ListTeamsReply struct {
 		} `json:"items"`
 	} `json:"response"`
 }
+
+type ListTeamServerAccountsReply struct {
+	Error struct {
+		ErrorAdditionalInfo string `json:"error_additional_info"`
+		ErrorFilename       string `json:"error_filename"`
+		ErrorFunctionName   string `json:"error_function_name"`
+		ErrorLineNumber     int    `json:"error_line_number"`
+		ErrorMessage        string `json:"error_message"`
+	} `json:"error"`
+}
