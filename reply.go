@@ -204,7 +204,7 @@ type GetVersionReply struct {
 	} `json:"response"`
 }
 
-type ListAccounts struct {
+type ListAccountsReply struct {
 	Error struct {
 		ErrorAdditionalInfo string `json:"error_additional_info"`
 		ErrorFilename       string `json:"error_filename"`
