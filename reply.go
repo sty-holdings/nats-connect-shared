@@ -62,7 +62,7 @@ type GetVersionReply struct {
 	} `json:"response"`
 }
 
-type ListInformationAppUsersTeamReply struct {
+type ListInfoAppUsersTeamReply struct {
 	Error struct {
 		ErrorAdditionalInfo string `json:"error_additional_info"`
 		ErrorFilename       string `json:"error_filename"`
