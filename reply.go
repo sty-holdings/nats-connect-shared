@@ -109,6 +109,37 @@ type ListPersonalAccessTokensReply struct {
 	} `json:"response"`
 }
 
+type ListSystemsReply struct {
+	Error struct {
+		ErrorAdditionalInfo string `json:"error_additional_info"`
+		ErrorFilename       string `json:"error_filename"`
+		ErrorFunctionName   string `json:"error_function_name"`
+		ErrorLineNumber     int    `json:"error_line_number"`
+		ErrorMessage        string `json:"error_message"`
+	} `json:"error"`
+	Response struct {
+		Items []struct {
+			ConnectionType          string    `json:"connection_type"`
+			Created                 time.Time `json:"created"`
+			HasManagedOperator      bool      `json:"has_managed_operator"`
+			HasManagedSystemAccount bool      `json:"has_managed_system_account"`
+			HostSystemId            string    `json:"host_system_id"`
+			Id                      string    `json:"id"`
+			IsTenant                bool      `json:"is_tenant"`
+			JetstreamDomain         string    `json:"jetstream_domain"`
+			JetstreamEnabled        bool      `json:"jetstream_enabled"`
+			JetstreamTiers          []string  `json:"jetstream_tiers"`
+			Name                    string    `json:"name"`
+			State                   string    `json:"state"`
+			Team                    struct {
+				Id   string `json:"id"`
+				Name string `json:"name"`
+			} `json:"team"`
+			UserJwtExpiresInSecs int `json:"user_jwt_expires_in_secs"`
+		} `json:"items"`
+	} `json:"response"`
+}
+
 type ListTeamsReply struct {
 	Error struct {
 		ErrorAdditionalInfo string `json:"error_additional_info"`
