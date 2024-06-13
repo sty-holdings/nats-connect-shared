@@ -4,6 +4,25 @@ import (
 	"time"
 )
 
+type GetPersonalAccessTokenReply struct {
+	Error struct {
+		ErrorAdditionalInfo string `json:"error_additional_info"`
+		ErrorFilename       string `json:"error_filename"`
+		ErrorFunctionName   string `json:"error_function_name"`
+		ErrorLineNumber     int    `json:"error_line_number"`
+		ErrorMessage        string `json:"error_message"`
+	} `json:"error"`
+	Response struct {
+		Items []struct {
+			Created    time.Time `json:"created"`
+			Id         string    `json:"id"`
+			Name       string    `json:"name"`
+			Expires    time.Time `json:"expires,omitempty"`
+			LastActive time.Time `json:"last_active,omitempty"`
+		} `json:"items"`
+	} `json:"response"`
+}
+
 type GetSystemReply struct {
 	Error struct {
 		ErrorAdditionalInfo string `json:"error_additional_info"`
@@ -146,6 +165,7 @@ type GetSystemLimitsReply struct {
 		} `json:"total"`
 	} `json:"response"`
 }
+
 type GetTeamReply struct {
 	Error struct {
 		ErrorAdditionalInfo string `json:"error_additional_info"`
