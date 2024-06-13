@@ -13,13 +13,9 @@ type GetPersonalAccessTokenReply struct {
 		ErrorMessage        string `json:"error_message"`
 	} `json:"error"`
 	Response struct {
-		Items []struct {
-			Created    time.Time `json:"created"`
-			Id         string    `json:"id"`
-			Name       string    `json:"name"`
-			Expires    time.Time `json:"expires,omitempty"`
-			LastActive time.Time `json:"last_active,omitempty"`
-		} `json:"items"`
+		Created time.Time `json:"created"`
+		Id      string    `json:"id"`
+		Name    string    `json:"name"`
 	} `json:"response"`
 }
 
