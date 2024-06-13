@@ -350,6 +350,81 @@ type ListInfoAppUsersTeamReply struct {
 	} `json:"response"`
 }
 
+type ListNATSUsersReply struct {
+	Error struct {
+		ErrorAdditionalInfo string `json:"error_additional_info"`
+		ErrorFilename       string `json:"error_filename"`
+		ErrorFunctionName   string `json:"error_function_name"`
+		ErrorLineNumber     int    `json:"error_line_number"`
+		ErrorMessage        string `json:"error_message"`
+	} `json:"error"`
+	Response struct {
+		Items []struct {
+			Account struct {
+				AccountPublicKey     string `json:"account_public_key"`
+				Id                   string `json:"id"`
+				IsScpAccount         bool   `json:"is_scp_account"`
+				IsSystemAccount      bool   `json:"is_system_account"`
+				Name                 string `json:"name"`
+				UserJwtExpiresInSecs int    `json:"user_jwt_expires_in_secs"`
+			} `json:"account"`
+			Claims struct {
+				Iat  int    `json:"iat"`
+				Iss  string `json:"iss"`
+				Jti  string `json:"jti"`
+				Name string `json:"name"`
+				Nats struct {
+					Data          int    `json:"data"`
+					IssuerAccount string `json:"issuer_account"`
+					Payload       int    `json:"payload"`
+					Pub           struct {
+					} `json:"pub"`
+					Sub struct {
+					} `json:"sub"`
+					Subs    int    `json:"subs"`
+					Type    string `json:"type"`
+					Version int    `json:"version"`
+				} `json:"nats"`
+				Sub string `json:"sub"`
+			} `json:"claims"`
+			Created          time.Time `json:"created"`
+			Id               string    `json:"id"`
+			Jwt              string    `json:"jwt"`
+			JwtExpiresAtMax  int       `json:"jwt_expires_at_max"`
+			JwtExpiresInSecs int       `json:"jwt_expires_in_secs"`
+			JwtSettings      struct {
+				Data    int `json:"data"`
+				Payload int `json:"payload"`
+				Pub     struct {
+				} `json:"pub"`
+				Sub struct {
+				} `json:"sub"`
+				Subs int `json:"subs"`
+			} `json:"jwt_settings"`
+			Name      string `json:"name"`
+			SkGroupId string `json:"sk_group_id"`
+			System    struct {
+				ConnectionType       string   `json:"connection_type"`
+				HttpGatewayUrl       string   `json:"http_gateway_url"`
+				Id                   string   `json:"id"`
+				IsTenant             bool     `json:"is_tenant"`
+				JetstreamDomain      string   `json:"jetstream_domain"`
+				JetstreamEnabled     bool     `json:"jetstream_enabled"`
+				JetstreamTiers       []string `json:"jetstream_tiers"`
+				Name                 string   `json:"name"`
+				ServerUrls           string   `json:"server_urls"`
+				State                string   `json:"state"`
+				UserJwtExpiresInSecs int      `json:"user_jwt_expires_in_secs"`
+			} `json:"system"`
+			Team struct {
+				Id   string `json:"id"`
+				Name string `json:"name"`
+			} `json:"team"`
+			UserPublicKey string `json:"user_public_key"`
+		} `json:"items"`
+	} `json:"response"`
+}
+
 type ListPersonalAccessTokensReply struct {
 	Error struct {
 		ErrorAdditionalInfo string `json:"error_additional_info"`
